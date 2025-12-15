@@ -42,35 +42,27 @@ Google Font: The Monoton font is imported via the CSS for0 the title.
 
 The HTML sets up the games structure and the individual card elements.
 
-ID/Class          Description                   Tailwind Classes (Example)
+ID/Class ---------> Description ---------------------------> Tailwind Classes (Example)
 
-memory_game       Main container for the        w-screen h-screen bg-cyan-
-                  entire game.                  950 p-10
+memory_game ----> Main container for the entire game.  ----> w-screen h-screen bg-cyan-950 p-10
                   
 
-header            Container for the title       h-[18%]
-                  and restart button.
+header ----> Container for the title and restart button. ----> h-[18%]
+                  
 
-restart_btn       Button to reset and           bg-gradient-to-r from-indigo-700...
-                  shuffle the game.
+restart_btn ----> Button to reset and  shuffle the game. ----> bg-gradient-to-r from-indigo-700...
+                 
 
-card_container    Grid layout for the           grid grid-cols-4 h-[82%] gap-3
-                  memory cards.
+card_container ---->  Grid layout for the memory cards. ----> grid grid-cols-4 h-[82%] gap-3
+                  
 
-flip_card         Each individual card.         w-[auto] h-[90px] relative hover:scale-95 
-                  Holds the front and 
-                  back images. The 
-                  data-framework 
-                  attribute is crucial
-                  for matching logic. 
+flip_card ----> Each individual card.Holds the front and back images. The data-framework attribute is crucial  for matching logic. --->
+w-[auto] h-[90px]relativehover:scale-95 
+                   
+                 
+.back ----->  The image shown when the card is flipped (the superhero). ----> "src = ""./assets/batman.png"""           
 
-.back             The image shown when          "src = ""./assets/batman.png"""
-                  the card is flipped 
-                  (the superhero).            
-
-.front            The image shown when
-                  the card is unflipped
-                  (the default card cover).      "src = ""./assets/fr.jpg"""
+.front -----> The image shown when the card is unflipped (the default card cover). -----> "src = ""./assets/fr.jpg"""      
 
 
 -----------------------------------------------------------------------------------------------------------
@@ -110,52 +102,37 @@ matching, locking the board, and shuffling.
 
 Core Variables:
 
-Variable             Type            Description
+Variable ----------> Type ---------> Description
 
-cards                NodeList        All elements with the class .flip_card.
+cards -------------> NodeList -----> All elements with the class .flip_card.
 
-hasFlippedCard       Boolean         Tracks if the first card of a pair has been flipped 
-                                     (true) or if no cards are flipped (false).
+hasFlippedCard       Boolean ------> Tracks if the first card of a pair has been flipped (true) or if no cards are flipped (false).
+
 "firstCard, 
-secondCard"          Element         Stores the two card elements currently flipped for comparison.
+secondCard"------>  Element -------> Stores the two card elements currently flipped for comparison.
 
-lockBoard            Boolean         Prevents players from flipping a third card while the first 
-                                     two are being checked or unflips are in progress.
+lockBoard -------> Boolean ------> Prevents players from flipping a third card while the first two are being checked or unflips are in progress.
 
 
 Key Functions:
 
-Function                    Description                        Implementation Details
+Function -----------------> Description ---------------------> Implementation Details
 
-shuffle()                   Randomizes the order of the        Assigns a random order CSS property (1-12) 
-                            cards.                             to each card within the flex/grid container. 
-                                                               This is run immediately when the page loads 
-                                                               (IIFE) and upon restart. 
+shuffle() ----> Randomizes the order of the cards. -----> Assigns a random order CSS property (1-12) to each card within the flex/grid container. This is run immediately when the page loads (IIFE) and upon restart. 
                             
 
-flipCard()                  Toggles the .flip class on a       This is the primary event handler. It assigns
-                            card.                              the card to firstCard or secondCard, and then
-                                                               calls checkForMatch() if secondCard is defined.
+flipCard() -----> Toggles the .flip class on a card. ------> This is the primary event handler. It assigns the card to firstCard or secondCard, and then
+calls checkForMatch() if secondCard is defined.
                                                        
-checkForMatch()             Compares the two flipped cards.    Checks if firstCard.dataset.framework === secondCard.
-                                                               dataset.framework. Calls disableCards() on a match, 
-                                                               or unflipCards() on a mismatch.
+checkForMatch() ------> Compares the two flipped cards. -----> Checks if firstCard.dataset.framework === secondCard. dataset.framework. Calls disableCards() on a match, or unflipCards() on a mismatch.
 
-disableCards()              Handles a successful match.        Removes the click event listeners from the two matched 
-                                                               cards, making them permanently face-up. Calls resetBoard().
+disableCards() ----> Handles a successful match. -----> Removes the click event listeners from the two matched cards, making them permanently face-up. Calls resetBoard().
 
-unflipCards()               Handles a mismatch.                Sets lockBoard = true, waits 1000ms (1 second) for the player
-                                                               to see the mismatched cards, removes the .flip class, 
-                                                               sets lockBoard = false, and then calls resetBoard().
+unflipCards() -----> Handles a mismatch. -----> Sets lockBoard = true, waits 1000ms (1 second) for the player to see the mismatched cards, removes the .flip class, sets lockBoard = false, and then calls resetBoard().
 
-resetBoard()                Resets variables for the next      Sets hasFlippedCard to false, firstCard and secondCard to null. 
-                            turn.
+resetBoard() -----> Resets variables for the next -----> Sets hasFlippedCard to false, firstCard and secondCard to null. turn.
 
-restartBtn.
-addEventListener()          Restart logic.                     On click, it unflips all cards, resets the board state, re-enables
-                                                               click listeners on all cards (via enableCards()), and then calls
-                                                               shuffle() after a short delay (1500ms) to allow the unflip animation
-                                                               to complete.
+restartBtn.addEventListener() -----> Restart logic. ------> On click, it unflips all cards, resets the board state, re-enables click listeners on all cards (via enableCards()), and then calls shuffle() after a short delay (1500ms) to allow the unflip animation to complete.
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
