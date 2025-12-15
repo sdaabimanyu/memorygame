@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+<body>
+    <section id="memory_game" class="w-screen h-screen bg-cyan-950 p-10 box-border ">
+        
+        <div id="header" class="h-[18%] mt-[-10px]">
+            <h1 class="text-center text-[25px] text-white font-bold monoton-regular">MEMORY GAME</h1>
+            <div class="flex justify-end lg:px-[100px]">
+                <button
+                class="w-[90px] h-[35px] lg:w-[100px] lg:h-[40px] bg-gradient-to-r from-indigo-700 via-white to-red-700 rounded text-[15px] font-bold text-black"
+                id="restart_btn">RESTART</button>
+            </div>
+        </div>
+        
+        <div id="card_container" class="grid grid-cols-4 h-[82%] gap-3 flex box-border lg:px-[100px]">
+            
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="batman">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/batman.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="batman">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/batman.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300"
+                data-framework="blackpanther">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/blackpanther.png" alt="">
+                ]<img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300"
+                data-framework="blackpanther">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/blackpanther.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300"
+                data-framework="captainamerica">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/captainamerica.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300"
+                data-framework="captainamerica">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/captainamerica.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="hulk">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/hulk.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="hulk">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/hulk.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="ironman">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/ironman.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="ironman">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/ironman.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="spiderman">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/spiderman.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="spiderman">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/spiderman.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="superman">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/superman.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="superman">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/superman.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="thor">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/thor.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+
+            <div class="flip_card  w-[auto] h-[90px] relative hover:scale-95 duration-300" data-framework="thor">
+                <img class="rounded back w-[100%] h-[100%] absolute bg-black" src="./assets/thor.png" alt="">
+                <img class="rounded front w-[100%] h-[100%] absolute bg-violet-400" src="./assets/fr.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <script src="./flip.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</body>
+</html>
