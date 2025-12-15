@@ -5,7 +5,7 @@
 ├── index.html          # Main HTML structure
 
 ├── style.css           # Custom CSS for flip animation and fonts
-\
+
 ├── flip.js             # Core game logic and interactivity
 
 └── assets/
