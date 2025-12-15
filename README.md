@@ -1,18 +1,33 @@
 📁 File StructureThe project is structured with three core files and an asset directory:
+
 /memory-game-project
+
 ├── index.html          # Main HTML structure
+
 ├── style.css           # Custom CSS for flip animation and fonts
+\
 ├── flip.js             # Core game logic and interactivity
+
 └── assets/
+
 ├── batman.png
+
 ├── blackpanther.png
+
 ├── captainamerica.png
+
 ├── hulk.png
+
 ├── ironman.png
+
 ├── spiderman.png
+
 ├── superman.png
+
 ├── thor.png
+
 └── fr.jpg          # The front-face image for the cards
+
 
 ---------------------------------------------------------------------------
 
